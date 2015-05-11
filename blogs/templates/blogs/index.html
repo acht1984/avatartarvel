@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <form action="{% url 'blogs:index' %}" method="post">
 {% csrf_token %}
 <h1>アバター旅行記</h1>
@@ -6,11 +7,11 @@
     <h2>1. アバターの選択</h2>
     <table>
         <tr>
-            <td><img src="" /><br />
+            <td><img src="{% static 'blogs/images/avatar_eri.jpg' %}" /><br />
                 <label><input type="radio" name="avatarId" value="eri" checked="checked" /><span>えり</span></label></td>
-            <td><img src="" /><br />
+            <td><img src="{% static 'blogs/images/avatar_soun.jpg' %}" /><br />
                 <label><input type="radio" name="avatarId" value="soun" /><span>早雲</span></label></td>
-            <td><img src="" /><br />
+            <td><img src="{% static 'blogs/images/avatar_o2.jpg' %}" /><br />
                 <label><input type="radio" name="avatarId" value="o2" /><span>Ｏ２</span></label></td>
         </tr>
     </table>
